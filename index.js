@@ -106,11 +106,14 @@ console.log(getWinnersByYear(getWinners, getYears));
 
 function getAverageGoals(data) 
 {
-
-    const total = data.reduce((accum, item) => {
-        return accum + item['Home Team Goals'] + item['Away Team Goals'];
+    
+    const homTotal = data.reduce((accum, item) => {
+        return accum + item['Home Team Goals'];
     },0);
-    return total/data.length;
+    const awayTotal = data.reduce((accum, item) => {
+        return accum + item['Away Team Goals'];
+    },0);
+    return `Home Team Average: ${homTotal/data.length} Away Team Average: ${awayTotal/data.length}`;
 };
 
 console.log(getAverageGoals(fifaData));
@@ -122,9 +125,9 @@ console.log(getAverageGoals(fifaData));
 Hint: Investigate your data to find "team initials"!
 Hint: use `.reduce` */
 
-function getCountryWins(/* code here */) {
+function getCountryWins(data, team) {
 
-    /* code here */
+    let wins = 0;
 
 };
 
